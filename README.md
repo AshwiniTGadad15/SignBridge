@@ -1,6 +1,7 @@
 # 💜 SignBridge
 ### Breaking Barriers. Connecting Through Communication.
 
+
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:7041B5,50:B794F6,100:EDE4FF&text=SignBridge&fontColor=FFFFFF&fontSize=65&animation=fadeIn&fontAlignY=45&desc=Communication%20Beyond%20Words&descAlignY=65&descSize=18" width="100%" />
 </p>
