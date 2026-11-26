@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-lavender-canvas: #F8F5FF;
+  --color-lavender-soft: #F0E9FF;
+  --color-lavender-primary: #D8C4FF;
+  --color-lavender-light: #E8DCFF;
+  --color-violet-primary: #9061D8;
+  --color-purple-deep: #7041B5;
+  --color-plum-dark: #38205F;
+  --color-ink: #302343;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #F8F5FF;
+    color: #302343;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+
+  :focus-visible {
+    outline: 2px solid #7041B5;
+    outline-offset: 2px;
+  }
+}
+
+.text-gradient-violet {
+  background: linear-gradient(135deg, #9061D8 0%, #7041B5 55%, #38205F 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #9061D8 0%, #7041B5 100%);
+  box-shadow: 0 8px 24px -6px rgba(112, 65, 181, 0.42);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gradient-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -6px rgba(112, 65, 181, 0.52);
+  filter: brightness(1.04);
+}
+
+.btn-gradient-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.glass-card-lavender {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(216, 196, 255, 0.75);
+  box-shadow: 0 14px 40px -16px rgba(112, 65, 181, 0.14);
+}
+
+.shadow-lavender-nav {
+  box-shadow: 0 4px 28px -6px rgba(144, 97, 216, 0.14);
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes glowBreath {
+  0%, 100% {
+    opacity: 0.48;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.78;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-glow-breath {
+  animation: glowBreath 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float-slow,
+  .animate-glow-breath {
+    animation: none;
+  }
+}
